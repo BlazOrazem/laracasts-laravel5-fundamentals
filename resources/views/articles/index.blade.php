@@ -6,6 +6,10 @@
 
     <hr>
 
+    <a href="{{ action('ArticlesController@create') }}">Create new article &raquo;</a>
+
+    <hr>
+
     @foreach($articles as $article)
         <article>
             <h2>
