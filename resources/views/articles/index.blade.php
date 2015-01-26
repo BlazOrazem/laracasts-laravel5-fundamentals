@@ -17,6 +17,7 @@
             </h2>
 
             <div class="body">
+                <p>Published at: {{ $article->published_at->format('d.m.Y, H:i') }}</p>
                 <p>{{ $article->body }}</p>
                 <p><a href="{{ url('/articles', [$article->id]) }}">Read more &raquo;</a></p>
             </div>

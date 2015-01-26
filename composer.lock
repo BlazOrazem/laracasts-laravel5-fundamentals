@@ -426,12 +426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2a9dd3cd00df52d2db1fbca61593ab65c9d54ef6"
+                "reference": "e6a50d8f94dbef71d35c026fa2b0635af24360e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2a9dd3cd00df52d2db1fbca61593ab65c9d54ef6",
-                "reference": "2a9dd3cd00df52d2db1fbca61593ab65c9d54ef6",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/e6a50d8f94dbef71d35c026fa2b0635af24360e8",
+                "reference": "e6a50d8f94dbef71d35c026fa2b0635af24360e8",
                 "shasum": ""
             },
             "require": {
@@ -446,7 +446,8 @@
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
             },
             "bin": [
-                "bin/doctrine-dbal"
+                "bin/doctrine-dbal",
+                "bin/doctrine-dbal.php"
             ],
             "type": "library",
             "extra": {
@@ -489,7 +490,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-01-24 13:41:39"
+            "time": "2015-01-26 20:08:02"
         },
         {
             "name": "doctrine/inflector",
@@ -2647,61 +2648,6 @@
                 "xunit"
             ],
             "time": "2015-01-18 10:44:19"
-        },
-        {
-            "name": "predis/predis",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nrk/predis.git",
-                "reference": "b8decc75a884fce1bfc62d5bc6823298a678f890"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/b8decc75a884fce1bfc62d5bc6823298a678f890",
-                "reference": "b8decc75a884fce1bfc62d5bc6823298a678f890",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "ext-curl": "Allows access to Webdis when paired with phpiredis",
-                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Predis\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniele Alessandri",
-                    "email": "suppakilla@gmail.com",
-                    "homepage": "http://clorophilla.net"
-                }
-            ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
-            "homepage": "http://github.com/nrk/predis",
-            "keywords": [
-                "nosql",
-                "predis",
-                "redis"
-            ],
-            "time": "2015-01-02 13:37:26"
         },
         {
             "name": "sebastian/comparator",
