@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class ArticlesController extends Controller {
 
 	/**
-	 * Show all articles
+	 * Show all articles.
 	 *
 	 * @return Response
 	 */
@@ -25,7 +25,7 @@ class ArticlesController extends Controller {
 	}
 
 	/**
-	 * Show a single article
+	 * Show a single article.
 	 *
 	 * @param  integer $id
 	 * @return Response
@@ -38,7 +38,7 @@ class ArticlesController extends Controller {
 	}
 
 	/**
-	 * Show the page to create a new article
+	 * Show the page to create a new article.
 	 *
 	 * @return Response
 	 */
@@ -48,7 +48,7 @@ class ArticlesController extends Controller {
 	}
 
 	/**
-	 * Save a new article
+	 * Save a new article.
 	 *
 	 * @param ArticleRequest $request
 	 * @return Response
@@ -66,7 +66,7 @@ class ArticlesController extends Controller {
 	}
 
 	/**
-	 * Edit an article
+	 * Edit an article.
 	 *
 	 * @param  integer $id
 	 * @return Response
@@ -79,10 +79,11 @@ class ArticlesController extends Controller {
 	}
 
 	/**
-	 * Update an article
+	 * Update an article.
 	 *
-	 * @param $id
-	 * @param Request $request
+	 * @param  $id
+	 * @param  ArticleRequest $request
+	 * @return Response
 	 */
 	public function update($id, ArticleRequest $request)
 	{

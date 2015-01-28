@@ -24,7 +24,7 @@ Route::resource('articles', 'ArticlesController');
 //Route::get('articles/{id}', 'ArticlesController@show');
 //Route::post('articles', 'ArticlesController@store');
 
-//Route::controllers([
-//	'auth' => 'Auth\AuthController',
-//	'password' => 'Auth\PasswordController',
-//]);
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
