@@ -2,10 +2,12 @@
 
 use App\Article;
 use App\Http\Requests;
-use App\Http\Requests\CreateArticleRequest;
+use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+
 
 class ArticlesController extends Controller {
 
@@ -24,6 +26,7 @@ class ArticlesController extends Controller {
 
 	/**
 	 * Show a single article
+	 *
 	 * @param  integer $id
 	 * @return Response
 	 */
@@ -47,10 +50,10 @@ class ArticlesController extends Controller {
 	/**
 	 * Save a new article
 	 *
-	 * @param CreateArticleRequest $request
+	 * @param ArticleRequest $request
 	 * @return Response
 	 */
-	public function store(CreateArticleRequest $request)
+	public function store(ArticleRequest $request)
 	{
 		//**another way to do this is with built-in request
 		//public function store(Request $request)
@@ -58,6 +61,34 @@ class ArticlesController extends Controller {
 		//$this->validate($request, ['title' => 'required']);
 
 		Article::create($request->all());
+
+		return redirect('articles');
+	}
+
+	/**
+	 * Edit an article
+	 *
+	 * @param  integer $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$article = Article::findOrFail($id);
+
+		return view('articles.edit', compact('article'));
+	}
+
+	/**
+	 * Update an article
+	 *
+	 * @param $id
+	 * @param Request $request
+	 */
+	public function update($id, ArticleRequest $request)
+	{
+		$article = Article::findOrFail($id);
+
+		$article->update($request->all());
 
 		return redirect('articles');
 	}
