@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class ArticlesController extends Controller {
@@ -22,19 +23,6 @@ class ArticlesController extends Controller {
 		$articles = Article::latest('published_at')->published()->get();
 
 		return view('articles.index', compact('articles'));
-	}
-
-	/**
-	 * Show a single article.
-	 *
-	 * @param  integer $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$article = Article::findOrFail($id);
-
-		return view('articles.show', compact('article'));
 	}
 
 	/**
@@ -55,14 +43,24 @@ class ArticlesController extends Controller {
 	 */
 	public function store(ArticleRequest $request)
 	{
-		//**another way to do this is with built-in request
-		//public function store(Request $request)
-		//use Illuminate\Http\Request;
-		//$this->validate($request, ['title' => 'required']);
+		$article = new Article($request->all());
 
-		Article::create($request->all());
+		Auth::user()->articles()->save($article);
 
 		return redirect('articles');
+	}
+
+	/**
+	 * Show a single article.
+	 *
+	 * @param  integer $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$article = Article::findOrFail($id);
+
+		return view('articles.show', compact('article'));
 	}
 
 	/**
@@ -90,6 +88,21 @@ class ArticlesController extends Controller {
 		$article = Article::findOrFail($id);
 
 		$article->update($request->all());
+
+		return redirect('articles');
+	}
+
+	/**
+	 * Delete an article.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$article = Article::findOrFail($id);
+
+		$article->delete();
 
 		return redirect('articles');
 	}
