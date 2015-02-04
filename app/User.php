@@ -41,4 +41,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Article');
 	}
 
+	/**
+	 * Page /foo can only be viewed by managers.
+	 *
+	 * @return bool
+	 */
+	public function isATeamManager()
+	{
+		return true;
+	}
+
 }
