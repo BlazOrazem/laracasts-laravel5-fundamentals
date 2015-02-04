@@ -58,40 +58,34 @@ class ArticlesController extends Controller {
 	/**
 	 * Show a single article.
 	 *
-	 * @param  integer $id
+	 * @param  Article $article
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Article $article)
 	{
-		$article = Article::findOrFail($id);
-
 		return view('articles.show', compact('article'));
 	}
 
 	/**
 	 * Edit an article.
 	 *
-	 * @param  integer $id
+	 * @param  Article $article
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Article $article)
 	{
-		$article = Article::findOrFail($id);
-
 		return view('articles.edit', compact('article'));
 	}
 
 	/**
 	 * Update an article.
 	 *
-	 * @param  $id
+	 * @param  Article $article
 	 * @param  ArticleRequest $request
 	 * @return Response
 	 */
-	public function update($id, ArticleRequest $request)
+	public function update(Article $article, ArticleRequest $request)
 	{
-		$article = Article::findOrFail($id);
-
 		$article->update($request->all());
 
 		return redirect('articles');
@@ -100,13 +94,11 @@ class ArticlesController extends Controller {
 	/**
 	 * Delete an article.
 	 *
-	 * @param  int  $id
+	 * @param  Article $article
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Article $article)
 	{
-		$article = Article::findOrFail($id);
-
 		$article->delete();
 
 		return redirect('articles');
