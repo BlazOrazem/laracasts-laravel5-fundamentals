@@ -59,6 +59,14 @@
 		</div>
 	</nav>
 
+	{{--
+		//FlashMsgExample
+		@include('partials.flash')
+	--}}
+	<div class="container-fluid">
+		@include('flash::message')
+	</div>
+
 	@yield('content')
 
 	@yield('footer')
@@ -66,5 +74,12 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<script>
+		//FlashMsgExample
+		//$('div.alert').not('.alert-important').delay(3000).slideUp(300);
+		$('#flash-overlay-modal').modal();
+	</script>
+
 </body>
 </html>

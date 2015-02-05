@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2c19b33dc07e3c11c67128fb776394c",
+    "hash": "7b26812e2860fea757b0832c26856431",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "343dbc07007272511727c9272e568d707682fc24"
+                "reference": "69680d55abe244e3efd7ce99fd18369005593395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/343dbc07007272511727c9272e568d707682fc24",
-                "reference": "343dbc07007272511727c9272e568d707682fc24",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/69680d55abe244e3efd7ce99fd18369005593395",
+                "reference": "69680d55abe244e3efd7ce99fd18369005593395",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-02-03 19:52:06"
+            "time": "2015-02-05 14:26:05"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -919,6 +919,49 @@
             "time": "2015-01-26 23:07:39"
         },
         {
+            "name": "laracasts/flash",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "a2e237ae34fcc73c4b0755fe51d1ac2063be781e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/a2e237ae34fcc73c4b0755fe51d1ac2063be781e",
+                "reference": "a2e237ae34fcc73c4b0755fe51d1ac2063be781e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2015-02-01 20:07:15"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.0.0",
             "source": {
@@ -1128,16 +1171,16 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.10.3",
+            "version": "v1.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b"
+                "reference": "7b2006e6e095126b5a061ec33fca3d90ea8a8219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
-                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/7b2006e6e095126b5a061ec33fca3d90ea8a8219",
+                "reference": "7b2006e6e095126b5a061ec33fca3d90ea8a8219",
                 "shasum": ""
             },
             "require": {
@@ -1180,7 +1223,7 @@
             "keywords": [
                 "debug"
             ],
-            "time": "2015-01-30 08:24:55"
+            "time": "2015-02-05 07:51:20"
         },
         {
             "name": "monolog/monolog",

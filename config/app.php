@@ -141,6 +141,7 @@ return [
 		 * Custom Service Providers...
 		 */
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -201,6 +202,7 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
 		'Debugbar'  => 'Barryvdh\Debugbar\Facade',
+		'Flash'     => 'Laracasts\Flash\Flash',
 
 	],
 
