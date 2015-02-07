@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use App\Http\Requests;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Response;
@@ -37,7 +38,9 @@ class ArticlesController extends Controller {
 	 */
 	public function create()
 	{
-		return view('articles.create');
+		$tags = Tag::lists('name', 'id');
+
+		return view('articles.create', compact('tags'));
 	}
 
 	/**
@@ -48,11 +51,12 @@ class ArticlesController extends Controller {
 	 */
 	public function store(ArticleRequest $request)
 	{
-		Auth::user()->articles()->create($request->all());
+		$article = Auth::user()->articles()->create($request->all());
 
-		//FlashMsgExample
-		//flash()->success('Your article has been created.')->important();
-		flash()->overlay('Your article has been successfully created.', 'Good Job');
+		$article->tags()->attach($request->input('tag_list'));
+
+		flash()->success('Your article has been created.')->important();
+		//flash()->overlay('Your article has been successfully created.', 'Good Job');
 
 		return redirect('articles');
 	}
@@ -76,7 +80,9 @@ class ArticlesController extends Controller {
 	 */
 	public function edit(Article $article)
 	{
-		return view('articles.edit', compact('article'));
+		$tags = Tag::lists('name', 'id');
+
+		return view('articles.edit', compact('article', 'tags'));
 	}
 
 	/**

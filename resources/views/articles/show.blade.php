@@ -29,6 +29,16 @@
                                 <p><em>Published at: {{ $article->published_at->format('d.m.Y, H:i') }}</em></p>
                                 <hr>
                                 <p>{{ $article->body }}</p>
+
+                                @unless($article->tags->isEmpty())
+                                    <hr>
+                                    <p><em>Tags:</em></p>
+                                    <ul>
+                                        @foreach($article->tags as $tag)
+                                            <li>{{ $tag->name }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endunless
                             </div>
                         </article>
                     </div>
