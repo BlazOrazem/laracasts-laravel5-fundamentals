@@ -121,9 +121,13 @@ class ArticlesController extends Controller {
 	 * @param Article $article
 	 * @param array   $tags
 	 */
-	private function syncTags(Article $article, array $tags)
+	private function syncTags(Article $article, array $tags = null)
 	{
-		$article->tags()->sync($tags);
+		if(empty($tags) || !is_array($tags)){
+			$article->tags()->detach($tags);
+		} else {
+			$article->tags()->sync($tags);
+		}
 	}
 
 	/**
