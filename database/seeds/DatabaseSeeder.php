@@ -35,11 +35,11 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ArticleTableSeeder');
 		$this->command->info('Articles table seeded.');
 
-//		$this->call('TagTableSeeder');
-//		$this->command->info('Tags table seeded.');
+		$this->call('TagTableSeeder');
+		$this->command->info('Tags table seeded.');
 
-//		$this->call('ArticleTagTableSeeder');
-//		$this->command->info('Article-Tag pivot table seeded.');
+		$this->call('ArticleTagTableSeeder');
+		$this->command->info('Article-Tag pivot table seeded.');
 	}
 
 	/**
