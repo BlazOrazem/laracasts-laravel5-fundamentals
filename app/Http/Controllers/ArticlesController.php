@@ -97,7 +97,7 @@ class ArticlesController extends Controller {
 	{
 		$article->update($request->all());
 
-		$this->syncTags($article, $request->input('tag_list'));
+		$this->syncTags($article, (array)$request->input('tag_list'));
 
 		return redirect('articles');
 	}
@@ -121,13 +121,9 @@ class ArticlesController extends Controller {
 	 * @param Article $article
 	 * @param array   $tags
 	 */
-	private function syncTags(Article $article, array $tags = null)
+	private function syncTags(Article $article, array $tags)
 	{
-		if(empty($tags) || !is_array($tags)){
-			$article->tags()->detach($tags);
-		} else {
-			$article->tags()->sync($tags);
-		}
+		$article->tags()->sync($tags);
 	}
 
 	/**
@@ -140,7 +136,7 @@ class ArticlesController extends Controller {
 	{
 		$article = Auth::user()->articles()->create($request->all());
 
-		$this->syncTags($article, $request->input('tag_list'));
+		$this->syncTags($article, (array)$request->input('tag_list'));
 
 		return $article;
 	}
