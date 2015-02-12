@@ -6,10 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="{{ elixir('css/all.css') }}" rel="stylesheet">
-
 	<!-- Bootstrap -->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel='stylesheet'>
+
+	<!-- Styles -->
+	<link href="/css/app.css" rel="stylesheet">
+	<link href="/css/all.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -69,11 +71,10 @@
 
 	@yield('content')
 
-	@yield('footer')
-
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="/js/all.js"></script>
+
+	@yield('footer')
 
 	<script>
 		//FlashMsgExample

@@ -5,4 +5,5 @@ body, label, .checkbox label {
   font-weight: 300; }
 
 label {
-  font-weight: bold; }
+  font-weight: bold;
+  color: green; }
