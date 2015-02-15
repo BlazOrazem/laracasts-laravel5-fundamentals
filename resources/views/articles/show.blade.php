@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="body">
-                                <p><em>Published at: {{ $article->published_at->format('d.m.Y, H:i') }}</em></p>
+                                <p><em>Published at: {{ $article->published_at }}</em></p>
                                 <hr>
                                 <p>{{ $article->body }}</p>
 
@@ -35,7 +35,7 @@
                                     <p><em>Tags:</em></p>
                                     <ul>
                                         @foreach($article->tags as $tag)
-                                            <li>{{ $tag->name }}</li>
+                                            <li>{!! link_to_action('TagsController@show', $tag->name, [$tag->name]) !!}</li>
                                         @endforeach
                                     </ul>
                                 @endunless

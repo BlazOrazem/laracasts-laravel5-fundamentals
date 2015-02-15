@@ -46,6 +46,17 @@ class Article extends Model {
 	}
 
 	/**
+	 * Get the published_at attribute.
+	 *
+	 * @param  $date
+	 * @return string
+	 */
+	public function getPublishedAtAttribute($date)
+	{
+		return Carbon::parse($date)->format('d.m.Y H:i:s');
+	}
+
+	/**
 	 * An article is owned by a user.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

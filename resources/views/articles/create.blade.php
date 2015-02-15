@@ -10,7 +10,7 @@
                         <a href="{{ action('ArticlesController@index') }}" class="btn btn-info pull-right">&laquo; Back to articles</a>
                     </div>
                     <div class="panel-body">
-                        {!! Form::open(['url' => 'articles']) !!}
+                        {!! Form::model($article = new \App\Article, ['url' => 'articles']) !!}
                             @include('articles.form', ['submitButtonText' => 'Add an article'])
                         {!! Form::close() !!}
                         @include('errors.list')

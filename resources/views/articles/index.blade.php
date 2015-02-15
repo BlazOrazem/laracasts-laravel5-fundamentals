@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p><em>Published at: {{ $article->published_at->format('d.m.Y, H:i') }}</em></p>
+                                    <p><em>Published at: {{ $article->published_at }}</em></p>
                                     <p>{{ $article->body }}</p>
                                     <p><a href="{{ url('/articles', [$article->id]) }}" class="btn btn-success">Read more &raquo;</a></p>
                                 </div>
