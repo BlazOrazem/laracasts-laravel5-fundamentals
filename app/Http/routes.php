@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('foo', 'FooController@foo');
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('about', 'PagesController@about');
@@ -24,9 +26,9 @@ Route::resource('articles', 'ArticlesController');
 //Route::get('articles/{id}', 'ArticlesController@show');
 //Route::post('articles', 'ArticlesController@store');
 
-Route::get('foo', ['middleware' => 'manager', function() {
-	return 'This page may only be viewed by managers.';
-}]);
+//Route::get('foo', ['middleware' => 'manager', function() {
+//	return 'This page may only be viewed by managers.';
+//}]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
